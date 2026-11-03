@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { @apply bg-white font-sans text-ink antialiased; }
+::selection { background: #cfe0fd; }
+
+:focus-visible { outline: 2px solid #2b7bf5; outline-offset: 3px; border-radius: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+.hero-bg {
+  background:
+    radial-gradient(900px 520px at 78% 10%, rgba(120,170,245,.55), transparent 70%),
+    radial-gradient(700px 500px at 10% 60%, rgba(180,208,250,.55), transparent 70%),
+    linear-gradient(180deg, #dce8fb 0%, #eef4fe 60%, #ffffff 100%);
+}
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(43,123,245,.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(43,123,245,.10) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(closest-side, #000 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(closest-side, #000 20%, transparent 100%);
+}
+.glass {
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.9);
+}
+.section-pad { @apply px-5 py-20 sm:px-8 lg:py-28; }
+.container-x { @apply mx-auto w-full max-w-6xl; }
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-bold text-white shadow-pill transition hover:bg-brand-dark;
+}
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/20 bg-white/70 px-6 py-3 text-sm font-bold text-ink transition hover:border-brand hover:text-brand;
+}
+.field {
+  @apply w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink-faint transition focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/15;
+}
